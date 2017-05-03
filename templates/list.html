@@ -15,7 +15,12 @@
     margin: 2px 2px;
     cursor: pointer;
     }
-
+    .button:hover {
+    background-color: #0F0;
+    text-shadow: 2px 2px #FFF;
+    color: black;
+    }
+    
 </style>
 <table style="width:100%; border:2px solid #000; text-align:center">
     <h1>User Story Manager</h1>
@@ -34,7 +39,7 @@
         <th>Delete</th>
     </tr>
     {% for x in datas %}
-    <tr>
+    <tr style="{{ loop.cycle('background-color: #EEE', 'background-color: #FFF') }}">
         <td>{{x[0]}}</td>
         <td>{{x[1]}}</td>
         <td>{{x[2]}}</td>

@@ -109,10 +109,7 @@ def list_page():
 
 
 def main():
-    datas = []
-    datas.append(['1', 'First', 'First Story', 'Acceptance Criteria', '500', '3', 'todo'])
-    datas.append(['2', 'Second', 'Second Story', 'Acceptance Criteria', '500', '3', 'done'])
-    print(delete_data(1))
+    pass
 
 
 if __name__ == '__main__':
