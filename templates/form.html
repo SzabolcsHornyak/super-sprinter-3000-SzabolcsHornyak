@@ -1,0 +1,49 @@
+<form action={% if s_id %}"/story/{{s_id}}"{% else %}"/story"{% endif %} method="post">
+    <div>
+        <p>
+            <h1>User Story manager - Add new story</h1>
+        </p>
+    </div>
+    <div>
+        <p>Story Title<br>
+            <input type="text" name="s_title" value="{{story[1]}}"><br></p>
+
+    </div>
+    <div>
+        <p>User Story<br>
+            <textarea name="s_text" rows="5" cols="20">{{story[2]}}</textarea></p>
+    </div>
+    <div>
+        <p>Acceptance Criteria<br>
+            <textarea name="criteria" rows="5" cols="20">{{story[3]}}</textarea></p>
+    </div>
+    <div>
+        <p>Business Value<br>
+            <input type="number" name="bval" min="100" max="1500" step="100" value="{{story[4]}}">
+        </p>
+    </div>
+    <div>
+        <p>Estimation (h)<br>
+            <input type="number" name="est" min="0.5" max="40" step="0.5" value="{{story[5]}}">
+        </p>
+    </div>
+    <div>
+        <p>Status<br>
+            <select name="status">
+            <option value="plan" {% if story[6]=='plan' %} selected="selected"{% endif %}>Planning</option>
+            <option value="todo" {% if story[6]=='todo' %} selected="selected"{% endif %}>TODO</option>
+            <option value="inprog" {% if story[6]=='inprog' %} selected="selected"{% endif %}>In progress</option>
+            <option value="review" {% if story[6]=='review' %} selected="selected"{% endif %}>Review</option>
+            <option value="done" {% if story[6]=='done' %} selected="selected"{% endif %}>Done</option>
+        </select></p>
+    </div>
+    <div>
+        {% if typ=='V' %} 
+                <p><input type="submit" value="UPDATES"></p> 
+        {% else %} 
+                <p><input type="submit" value="SUBMIT"></p>
+        {% endif %}
+            
+        
+    </div>
+</form>

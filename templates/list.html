@@ -1,0 +1,58 @@
+<style>
+    th {
+        border: 0px solid;
+        background: #CCC;
+    }
+    .button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    text-shadow: 2px 2px #000;
+    display: inline-block;
+    font-size: 12px;
+    margin: 2px 2px;
+    cursor: pointer;
+    }
+
+</style>
+<table style="width:100%; border:2px solid #000; text-align:center">
+    <h1>User Story Manager</h1>
+    <div>
+        <a href="/story" ><button class="button" ><b>ADD NEW STORY</b></button></a>
+    </div>
+    <tr>
+        <th>ID</th>
+        <th>Story Title</th>
+        <th>User Story</th>
+        <th>Acceptance criteria</th>
+        <th>Business Value</th>
+        <th>Estimation (h)</th>
+        <th>Status</th>
+        <th>View</th>
+        <th>Delete</th>
+    </tr>
+    {% for x in datas %}
+    <tr>
+        <td>{{x[0]}}</td>
+        <td>{{x[1]}}</td>
+        <td>{{x[2]}}</td>
+        <td>{{x[3]}}</td>
+        <td>{{x[4]}}</td>
+        <td>{{x[5]}}</td>
+        <td>{% if x[6]=='plan' %}Planning{% endif %}
+            {% if x[6]=='todo' %}TODO{% endif %}
+            {% if x[6]=='inprog' %}In progeress{% endif %}
+            {% if x[6]=='review' %}Review{% endif %}
+            {% if x[6]=='done' %}Done{% endif %}
+        </td>
+        <td>
+            <a href="/story/{{x[0]}}"><img src="/static/zoom.png" style="width:25px;height:25px;"></a>
+        </td>
+        <td>
+            <a href="/del/{{x[0]}}"><img src="/static/delete.png" style="width:25px;height:25px;"></a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
