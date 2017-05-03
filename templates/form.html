@@ -6,25 +6,25 @@
     </div>
     <div>
         <p>Story Title<br>
-            <input type="text" name="s_title" value="{{story[1]}}"><br></p>
+            <input type="text" name="s_title" value="{{story[1]}}" required><br></p>
 
     </div>
     <div>
         <p>User Story<br>
-            <textarea name="s_text" rows="5" cols="20">{{story[2]}}</textarea></p>
+            <textarea name="s_text" rows="5" cols="20" required>{{story[2]}}</textarea></p>
     </div>
     <div>
         <p>Acceptance Criteria<br>
-            <textarea name="criteria" rows="5" cols="20">{{story[3]}}</textarea></p>
+            <textarea name="criteria" rows="5" cols="20" required>{{story[3]}}</textarea></p>
     </div>
     <div>
         <p>Business Value<br>
-            <input type="number" name="bval" min="100" max="1500" step="100" value="{{story[4]}}">
+            <input type="number" name="bval" min="100" max="1500" step="100" value="{{story[4]}}" required>
         </p>
     </div>
     <div>
         <p>Estimation (h)<br>
-            <input type="number" name="est" min="0.5" max="40" step="0.5" value="{{story[5]}}">
+            <input type="number" name="est" min="0.5" max="40" step="0.5" value="{{story[5]}}" required>
         </p>
     </div>
     <div>
